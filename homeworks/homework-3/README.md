@@ -1,7 +1,22 @@
-Υπάρχουν 2 βασικά αρχεία με κώδικα, τα οποία βρίσκονται στο path: \homework_3/controllers/PandaController.
+# Webots Controller Files
+Path: `homeworks/homework-3/homework_3/controllers/PandaController`
 
-* Το 1ο έχει όνομα trajectory-velocity-control-panda-7DOF.py και περιλαμβάνει τον κώδικα
-για τον υπολογισμό των τροχιών, αλλά και των velocity commands.
-* Το 2ο έχει όνομα PandaController.py και περιλαμβάνει κώδικα που διβάζει από τα παραγόμενα .txt αρχεία
-τις λίστες με τις ταχύτητες για κάθε άρθρωση ανά τροχιά, αναθέτοντάς τες στις αντίστιχες μεταβλητές
-v1, v2, v3, v4 και v5, προκειμένου ο βραχίονας να εκτελέσει τις ταχύτητες.
+---
+
+## Core Scripts
+There are two main scripts used for the simulation:
+
+### 1. Trajectory and Velocity Control
+Filename: `trajectory-velocity-control-panda-7DOF.py` 
+
+This script is responsible for:
+* Calculating the required **trajectories**.
+* Generating the **velocity commands** for the robot arm.
+
+### 2. Robot Controller
+Filename: `PandaController.py`  
+
+This script handles the execution of the movement by:
+* Reading the generated `.txt` files containing the velocity lists for each joint per trajectory.
+* Assigning these values to the respective variables (`v1`, `v2`, `v3`, `v4`, and `v5`).
+* Commanding the arm to execute the calculated velocities in the simulation environment.
