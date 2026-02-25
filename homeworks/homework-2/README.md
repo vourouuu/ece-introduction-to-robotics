@@ -16,13 +16,6 @@ If the files `SupervisorController.py` and `PandaController.py` are not already 
 
 ---
 
-## Running the Simulation
-To start the simulation, press the **Play** (start arrow) button at the top of the Webots interface.
-
-![fig_1](figures/fig_1.png)
-
----
-
 ## Simulation Description
 Upon opening the world, all objects (robot arm, box, cylinder) are initially located at position **(0,0,0)** and oriented according to the **world frame**.
 
