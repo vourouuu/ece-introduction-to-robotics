@@ -1,0 +1,296 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+  basicTimeStep 10
+  contactProperties [
+    ContactProperties {
+      material1 "mat1"
+      material2 "mat2"
+      coulombFriction [
+        5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0 0 1 1.5707963267948966
+  position 2.2539201161135493e-16 -1.7223482827063943 0.40231275830636154
+}
+TexturedBackground {
+  texture "factory"
+}
+TexturedBackgroundLight {
+  texture "factory"
+}
+RectangleArena {
+  floorSize 5 5
+  floorTileSize 0.1 0.1
+}
+Robot {
+  children [
+    Pose {
+      translation 0 0 0.02725
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1143 0.1143 0.0545
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0 0.0545
+      }
+      device [
+        RotationalMotor {
+          name "arm_joint_1"
+          maxVelocity 5
+          minPosition -3.1415926535
+          maxPosition 3.1415926535
+          maxTorque 5
+        }
+        PositionSensor {
+          name "arm_joint_1_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.0545
+        children [
+          Pose {
+            translation 0 0 0.0615
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.0402 0.05 0.123
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 1 0
+              anchor 0 0 0.123
+            }
+            device [
+              RotationalMotor {
+                name "arm_joint_2"
+                maxVelocity 5
+                minPosition -1.57079632679
+                maxPosition 1.57079632679
+                maxTorque 5
+              }
+              PositionSensor {
+                name "arm_joint_2_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 0.123
+              rotation 0 1 0 0
+              children [
+                Pose {
+                  translation 0 0 0.1585
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 1 0 0
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.0356 0.05 0.317
+                      }
+                    }
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 1 0
+                    anchor 0 0 0.317
+                  }
+                  device [
+                    RotationalMotor {
+                      name "arm_joint_3"
+                      maxVelocity 5
+                      minPosition -1.57079632679
+                      maxPosition 1.57079632679
+                      maxTorque 5
+                    }
+                    PositionSensor {
+                      name "arm_joint_3_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 0.317
+                    rotation 0 1 0 0
+                    children [
+                      Pose {
+                        translation 0 0 0.101
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColor 1 1 0
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Box {
+                              size 0.0356 0.05 0.202
+                            }
+                          }
+                        ]
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 1 0
+                          anchor 0 0 0.202
+                        }
+                        device [
+                          RotationalMotor {
+                            name "arm_joint_4"
+                            maxVelocity 5
+                            minPosition -1.57079632679
+                            maxPosition 1.57079632679
+                            maxTorque 5
+                          }
+                          PositionSensor {
+                            name "arm_joint_4_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 0 0 0.202
+                          rotation 0 1 0 0
+                          children [
+                            Pose {
+                              translation 0 0 0.08025
+                              children [
+                                Shape {
+                                  appearance PBRAppearance {
+                                    baseColor 0 1 0
+                                    roughness 1
+                                    metalness 0
+                                  }
+                                  geometry Box {
+                                    size 0.0356 0.05 0.1605
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                          name "arm_link_4"
+                          boundingObject Pose {
+                            translation 0 0 0.08025
+                            children [
+                              Box {
+                                size 0.0356 0.05 0.1605
+                              }
+                            ]
+                          }
+                          physics Physics {
+                            density -1
+                            mass 0.15814
+                            centerOfMass [
+                              0 0 0.08025
+                            ]
+                            inertiaMatrix [
+                              0.0003724227 0.0003561785 4.964748e-05
+                              0 0 0
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "arm_link_3"
+                    boundingObject Pose {
+                      translation 0 0 0.101
+                      children [
+                        Box {
+                          size 0.0356 0.05 0.202
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 0.219315
+                      centerOfMass [
+                        0 0 0.101
+                      ]
+                      inertiaMatrix [
+                        0.0007914335 0.0007689055 6.885311e-05
+                        0 0 0
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "arm_link_2"
+              boundingObject Pose {
+                translation 0 0 0.1585
+                children [
+                  Box {
+                    size 0.0356 0.05 0.317
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.293023
+                centerOfMass [
+                  0 0 0.1585
+                ]
+                inertiaMatrix [
+                  0.002514848 0.002484748 9.199368e-05
+                  0 0 0
+                ]
+              }
+            }
+          }
+        ]
+        name "arm_link_1"
+        boundingObject Pose {
+          translation 0 0 0.0615
+          children [
+            Box {
+              size 0.0402 0.05 0.123
+            }
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.190421
+          centerOfMass [
+            0 0 0.0615
+          ]
+          inertiaMatrix [
+            0.0002797448 0.0002657178 6.531516e-05
+            0 0 0
+          ]
+        }
+      }
+    }
+  ]
+  name "Arm"
+  boundingObject Pose {
+    translation 0 0 0.02725
+    children [
+      Box {
+        size 0.1143 0.1143 0.0545
+      }
+    ]
+  }
+  controller "ArmController"
+}

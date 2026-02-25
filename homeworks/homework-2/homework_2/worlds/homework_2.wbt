@@ -1,0 +1,88 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/Panda.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "mat1"
+      material2 "mat2"
+      coulombFriction [
+        5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0 0 1 1.5707963267948966
+  position 0.2882246888140253 -2.127136440272639 0.565363812673665
+}
+TexturedBackground {
+  texture "factory"
+}
+TexturedBackgroundLight {
+  texture "factory"
+}
+RectangleArena {
+  floorSize 5 5
+  floorTileSize 0.1 0.1
+}
+DEF Supervisor Robot {
+  name "supervisor"
+  controller "SupervisorController"
+  supervisor TRUE
+}
+DEF red-box Solid {
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 0 0
+        }
+      }
+      geometry Mesh {
+        url [
+          "../meshes/red-box-with-hole.stl"
+        ]
+      }
+    }
+  ]
+  name "red-box-with-hole"
+  boundingObject Mesh {
+    url [
+      "../meshes/red-box-with-hole.stl"
+    ]
+  }
+}
+DEF orange-cylinder Solid {
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          emissiveColor 1 0.4 0
+        }
+      }
+      geometry Cylinder {
+        height 0.25
+        radius 0.025
+      }
+    }
+  ]
+  name "orange-cylinder"
+  contactMaterial "mat1"
+  boundingObject Cylinder {
+    height 0.25
+    radius 0.025
+  }
+  physics Physics {
+  }
+}
+DEF ARM Panda {
+  rotation 1 0 0 0
+  controller "PandaController"
+  supervisor TRUE
+}
