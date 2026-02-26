@@ -4,7 +4,7 @@ Throughout the semester, we were assigned four practical exercises, which I have
 
 ---
 
-## homeworks
+## homework
 This folder contains the four homework assignments of the course. The first three concern Franka Emika Panda Robot via Webots Simulator, while the fourth was implemented based on custom URDF file.
 
 ## lectures
